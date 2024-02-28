@@ -1,5 +1,6 @@
 {
   "name": "proyecto_horarios",
+  "homepage": "https://esmeraldamarin.github.io/schedule_planner/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +13,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://esmeraldamarin.github.io/schedule_planner/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
