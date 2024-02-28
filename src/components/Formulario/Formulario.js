@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ChromePicker } from 'react-color';
+
 const horasPosibles = () => {
     let hora = '8';
     let minuto = '00';
@@ -18,24 +20,26 @@ const horasPosibles = () => {
 }
 
 const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => {
-
     const diasSemana = [['Lunes', 0], ['Martes', 1], ['Miercoles', 2], ['Jueves', 3], ['Viernes', 4], ['Sabado', 5]];
 
     const [asignatura, setAsignatura] = useState('');
     const [desde, setDesde] = useState('');
     const [hasta, setHasta] = useState('');
     const [dia, setDia] = useState('');
-    const [colorCelda, setColorCelda] = useState('');
+    const [colorCelda, setColorCelda] = useState('ffffff');
+
+    const handleColorChange = (color) => {
+        setColorCelda(color.hex);
+    }
 
     const agregarHorario = () => {
-        console.log(asignatura,desde,hasta,colorCelda,dia)
         if (asignatura && desde && hasta && dia && colorCelda) {
-           
+
             const nuevoHorario = {
                 asignatura, desde, hasta, dia, colorCelda
             }
             onAgregarHorario(nuevoHorario);
-            
+
         } else {
             alert('Porfi completa todos los campos q te cuesta animal')
         }
@@ -49,6 +53,7 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
     const limpiarHorario = () => {
         onLimpiarHorario()
     };
+
     const descargarHorario = () => {
         onGenerarImagen()
     }
@@ -58,11 +63,13 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
             <input
                 type='text'
                 placeholder='Ej: Economia'
+                className='inp_sel'
                 value={asignatura}
                 onChange={(event) => setAsignatura(event.target.value)}
             />
             <label>Ingrese el dia</label>
             <select
+                className='inp_sel'
                 value={dia}
                 onChange={(event) => setDia(event.target.value)}>
                 <option value='' disabled>Seleccione un día</option>
@@ -71,9 +78,10 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                 ))}
             </select>
             <label>Ingrese el Horario</label>
-            <div>
+            <div className='horasCtn'>
                 de:
                 <select
+                    className='inp_sel'
                     value={desde}
                     onChange={(event) => setDesde(event.target.value)}>
                     <option value='' disabled>Hora</option>
@@ -83,6 +91,7 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                 </select>
                 a:
                 <select
+                    className='inp_sel'
                     value={hasta}
                     onChange={(event) => setHasta(event.target.value)}>
                     <option value='' disabled>Hora</option>
@@ -91,19 +100,15 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                     ))}
                 </select>
             </div>
-            <label>Ingrese un Color</label>
-            <input
-                type='text'
-                placeholder='Ej: A05696'
-                value={colorCelda}
-                onChange={(event) => setColorCelda(event.target.value)}
-            />
+            <label htmlFor="colorPicker">Selecciona un color:</label>
+            <ChromePicker className='colorInput' color={colorCelda} onChangeComplete={handleColorChange} />
+
             <div className='botonesCtn'>
                 <div>
-                    <button onClick={limpiarHorario} className='limpiar'>Limpiar Todo</button>
-                    <button onClick={agregarHorario}>Agregar Horario</button>
+                    <button onClick={limpiarHorario} className='limpiar inp_sel'>Limpiar Todo</button>
+                    <button onClick={agregarHorario} className='inp_sel'>Agregar Horario</button>
                 </div>
-                <button onClick={descargarHorario}>Descargar Horario</button>
+                <button onClick={descargarHorario} className='inp_sel'>Descargar Horario</button>
 
             </div>
 

@@ -55,41 +55,59 @@
   justify-content: space-between;
   box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
 }
+.formulario > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+  margin-right: 10px !important;
+}
+.formulario > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div {
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 50px !important;
+  margin-top: -3px !important;
+}
 .formulario label {
   font-size: 1.1em;
-  margin: 15px 0;
+  margin: 5px 0;
 }
-.formulario input, .formulario button, .formulario select {
+.formulario p {
+  margin-top: 10px;
+}
+.formulario .inp_sel, .formulario .colorInput {
   width: 100%;
   border-radius: 100px;
   margin: 5px 0;
-  padding: 10px 30px;
+  padding: 7px 30px;
   border: 0px;
   font-size: 1.2em;
   box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
 }
-.formulario input:focus, .formulario button:focus, .formulario select:focus {
+.formulario .inp_sel:focus, .formulario .colorInput:focus {
   box-shadow: 0px 0px 5px 0px rgb(42, 42, 42);
 }
-.formulario > div {
+.formulario > div.horasCtn {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.formulario > div select {
+.formulario > div.horasCtn select {
   margin: 0px 15px;
   text-align: center;
-  padding: 10px 0;
+  padding: 7px 0;
   min-width: 100px;
+}
+.formulario .colorInput {
+  display: flex;
+  box-shadow: 0px 0px 3px 0px rgb(101, 100, 100) !important;
+  border-radius: 30px !important;
+  padding: 10px 40px !important;
 }
 .formulario .botonesCtn {
   flex-direction: column;
 }
 .formulario .botonesCtn button {
-  margin-top: 20px;
+  margin-top: 10px;
   color: white;
   font-size: 1em;
-  background-color: rgb(0, 0, 185);
+  background-color: #0C356A;
 }
 .formulario .botonesCtn button:hover {
   box-shadow: 0px 0px 8px 0px rgb(42, 42, 42);
@@ -101,9 +119,9 @@
 .formulario .botonesCtn > div button:first-child {
   width: 40%;
   margin-right: 10px;
-  background-color: rgb(253, 46, 46);
+  background-color: #DF2E38;
 }
 .formulario .botonesCtn > div button:nth-child(2) {
   width: 60%;
-  background-color: rgb(6, 186, 6);
+  background-color: #03cc6e;
 }/*# sourceMappingURL=index.css.map */

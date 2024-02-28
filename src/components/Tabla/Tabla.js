@@ -42,7 +42,7 @@ const rellenarHoras = (filas, horarios)=>{
         desde = parseInt(desde,10)
         hasta = parseInt(hasta,10)
         for(let i = desde; i < hasta ; i++){
-            filas[i][dia+3] = `${asignatura}:#${colorCelda}`
+            filas[i][dia+3] = `${asignatura}:${colorCelda}`
         }
     });
 
@@ -98,7 +98,6 @@ const Tabla = () => {
                             if(j<6){
                                 if (celda!==""){ 
                                     let [asignatura, color] = fila[j+3].split(":");
-
                                     return <button key={j} 
                                                    id={j} 
                                                    className= 'celda ocupada'

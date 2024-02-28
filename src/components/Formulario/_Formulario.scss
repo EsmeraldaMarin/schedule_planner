@@ -9,16 +9,27 @@
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
-
+    > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+        margin-right: 10px !important;
+    }
+    > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div{
+        height:30px !important;
+        width: 30px !important;
+        border-radius: 50px !important;
+        margin-top: -3px !important;
+    }
     label{
         font-size: 1.1em;
-        margin: 15px 0;
+        margin: 5px 0;
     }
-    input, button, select{
+    p{
+        margin-top: 10px;
+    }
+    .inp_sel, .colorInput{
         width: 100%;
         border-radius: 100px;
         margin: 5px 0;
-        padding: 10px 30px;
+        padding: 7px 30px;
         border: 0px;
         font-size: 1.2em;
         box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
@@ -27,7 +38,7 @@
         }
     }
     
-    >div{
+    >div.horasCtn{
         display: flex;
         //flex-wrap: wrap;
         justify-content: space-between;
@@ -35,18 +46,25 @@
         select{
             margin: 0px 15px;
             text-align: center;
-            padding: 10px 0;
+            padding: 7px 0;
             min-width: 100px;
             //max-width: 100px;
         }
     }
+    .colorInput{
+        display: flex;
+        box-shadow: 0px 0px 3px 0px rgb(101, 100, 100) !important;
+        border-radius: 30px !important;
+        padding: 10px 40px !important;
+        
+    }
     .botonesCtn{
         flex-direction: column;
         button{
-            margin-top: 20px;
+            margin-top: 10px;
             color: white;
             font-size: 1em;
-            background-color: rgb(0, 0, 185);
+            background-color: #0C356A;
             &:hover{
                 box-shadow: 0px 0px 8px 0px rgb(42, 42, 42);
             }
@@ -58,11 +76,11 @@
                 &:first-child{
                     width: 40%;
                     margin-right: 10px;
-                    background-color:rgb(253, 46, 46);
+                    background-color:#DF2E38;
                 }
                 &:nth-child(2){
                     width: 60%;
-                    background-color: rgb(6, 186, 6);
+                    background-color: #03cc6e;
                 }
             }
         }
