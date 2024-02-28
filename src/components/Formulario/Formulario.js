@@ -28,14 +28,22 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
     const [colorCelda, setColorCelda] = useState('');
 
     const agregarHorario = () => {
+        console.log(asignatura,desde,hasta,colorCelda,dia)
         if (asignatura && desde && hasta && dia && colorCelda) {
+           
             const nuevoHorario = {
                 asignatura, desde, hasta, dia, colorCelda
             }
             onAgregarHorario(nuevoHorario);
+            
         } else {
             alert('Porfi completa todos los campos q te cuesta animal')
         }
+        setAsignatura('');
+        setDesde('');
+        setHasta('');
+        setDia('');
+        setColorCelda('');
     }
 
     const limpiarHorario = () => {
