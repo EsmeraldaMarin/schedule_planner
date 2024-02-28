@@ -36,11 +36,13 @@ const coloresLindos = [
 
 const rellenarHoras = (filas, horarios)=>{
     horarios.forEach(horario => {
+    
         let {asignatura, desde, dia, hasta, colorCelda} = horario
         dia = parseInt(dia,10)
+        desde = parseInt(desde,10)
+        hasta = parseInt(hasta,10)
         for(let i = desde; i < hasta ; i++){
-            filas[i][dia+3] = asignatura
-            filas[i][9]=`#${colorCelda}:${dia}`
+            filas[i][dia+3] = `${asignatura}:#${colorCelda}`
         }
     });
 
@@ -56,16 +58,12 @@ const Tabla = () => {
 
     const agregarHorario = (nuevoHorario) => {
         setHorarios([...horarios, nuevoHorario])
+        
     }
     const limpiarHorario =()=>{
         setHorarios([])
     }
-    const borrarCelda = (fila)=>{
-        console.log(horarios)
-        const nuevaListaHorarios = horarios.filter((horario) => `#${horario.colorCelda}:${horario.dia}` !== fila[9]);
-        console.log(nuevaListaHorarios)
-        setHorarios(nuevaListaHorarios);
-    }
+
     const generarImagen = ()=>{
         if (tablaRef.current){
             html2canvas(tablaRef.current).then((canvas)=>{
@@ -96,15 +94,16 @@ const Tabla = () => {
                         <div className='hasta'>{fila[2]}</div>
                         
                         {fila.slice(3).map((celda, j) => {
-                            let [color, numDia] = fila[9].split(":");
+                            //let [color, numDia] = fila[9].split(":");
                             if(j<6){
-                                if (numDia==j){ 
+                                if (celda!==""){ 
+                                    let [asignatura, color] = fila[j+3].split(":");
+
                                     return <button key={j} 
                                                    id={j} 
                                                    className= 'celda ocupada'
-                                                   style={{ backgroundColor: color }}
-                                                   onClick={()=>borrarCelda(fila)}> 
-                                                   {celda}
+                                                   style={{ backgroundColor: color }}> 
+                                                   {asignatura}
                                             </button>
                             
                                 } else{
