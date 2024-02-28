@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import html2canvas from 'html2canvas';
 import Formulario from '../Formulario/Formulario';
 import HeadTable from './HeadTable';
 
@@ -47,7 +48,10 @@ const rellenarHoras = (filas, horarios)=>{
 
 const Tabla = () => {
     
-    const [horarios, setHorarios] = useState([])
+    const [horarios, setHorarios] = useState([]);
+    const tablaRef = useRef(null);
+
+
     let filas = crearHoras("8:00")
 
     const agregarHorario = (nuevoHorario) => {
@@ -62,11 +66,28 @@ const Tabla = () => {
         console.log(nuevaListaHorarios)
         setHorarios(nuevaListaHorarios);
     }
+    const generarImagen = ()=>{
+        if (tablaRef.current){
+            html2canvas(tablaRef.current).then((canvas)=>{
+                //obtengo URL de la imagen
+                const imgURL = canvas.toDataURL('image/png');
+
+                //creo un enlace de desacarga
+                const link = document.createElement('a');
+                link.href= imgURL;
+                link.download = 'mis_horarios.png';
+
+                //simular clic en el enlace para descargar la imagen
+                link.click();
+            })
+        }
+    }
     rellenarHoras(filas, horarios)
 
     return (
         <div className='t'>
-            <div className='tablaHorarios'>
+            <Formulario onAgregarHorario={agregarHorario} onLimpiarHorario={limpiarHorario} onGenerarImagen={generarImagen}/>
+            <div ref={tablaRef} className='tablaHorarios'>
                 <HeadTable />
                 {filas.map((fila, i) => (
                     <div key={i} className='fila'>
@@ -94,7 +115,6 @@ const Tabla = () => {
                         })}
                     </div>
                 ))}</div>
-            <Formulario onAgregarHorario={agregarHorario} onLimpiarHorario={limpiarHorario} />
             
         </div>
     )

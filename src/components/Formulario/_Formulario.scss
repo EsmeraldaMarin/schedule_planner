@@ -1,6 +1,7 @@
 .formulario{
     width: 100%;
-    padding: 50px 100px;
+    padding: 0px ;
+    padding-right: 70px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -13,24 +14,15 @@
         width: 100%;
         border-radius: 100px;
         margin: 5px 0;
-        padding: 15px;
+        padding: 10px 30px;
         border: 0px;
+        font-size: 1.2em;
         box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
         &:focus{
             box-shadow: 0px 0px 5px 0px rgb(42, 42, 42);
         }
     }
-    button{
-        margin-top: 20px;
-        background-color: rgb(6, 186, 6);
-        color: white;
-        &.limpiar{
-            background-color:rgb(253, 46, 46);
-        }
-        &:hover{
-            box-shadow: 0px 0px 8px 0px rgb(42, 42, 42);
-        }
-    }
+    
     >div{
         display: flex;
         justify-content: space-between;
@@ -39,5 +31,33 @@
             margin: 0px 15px;
             text-align: center;
         }
+    }
+    .botonesCtn{
+        flex-direction: column;
+        button{
+            margin-top: 20px;
+            color: white;
+            font-size: 1em;
+            background-color: rgb(0, 0, 185);
+            &:hover{
+                box-shadow: 0px 0px 8px 0px rgb(42, 42, 42);
+            }
+        }
+        >div{
+            display: flex;
+            width: 100%;
+            button{
+                &:first-child{
+                    width: 40%;
+                    margin-right: 10px;
+                    background-color:rgb(253, 46, 46);
+                }
+                &:nth-child(2){
+                    width: 60%;
+                    background-color: rgb(6, 186, 6);
+                }
+            }
+        }
+        
     }
 }
