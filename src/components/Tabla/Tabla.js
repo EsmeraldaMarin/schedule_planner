@@ -80,6 +80,13 @@ const Tabla = () => {
             })
         }
     }
+    const borrarEntrada = (event)=>{
+        const codigo = event.target.classList[0];
+        const [asignatura, color] = codigo.split('_')
+        const nuevosHorarios = horarios.filter((horario)=> horario.asignatura !== asignatura && horario.color !== color);
+        setHorarios(nuevosHorarios)
+
+    }
     rellenarHoras(filas, horarios)
 
     return (
@@ -99,14 +106,15 @@ const Tabla = () => {
                                 if (celda!==""){ 
                                     let [asignatura, color] = fila[j+3].split(":");
                                     return <button key={j} 
-                                                   id={j} 
-                                                   className= 'celda ocupada'
-                                                   style={{ backgroundColor: color }}> 
-                                                   {asignatura}
+                                                   className= {`${asignatura}_${color} celda ocupada`}
+                                                   style={{ backgroundColor: color }}
+                                                   onClick={borrarEntrada}> 
+                                                   
+                                                   {asignatura}                          
                                             </button>
                             
                                 } else{
-                                    return <div key={j} id={j} className='celda' style={{ backgroundColor: "#fff" }}>{celda}</div>
+                                    return <div key={j} className='celda' style={{ backgroundColor: "#fff" }}>{celda}</div>
                                 }
                             }
                             

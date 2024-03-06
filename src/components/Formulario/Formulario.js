@@ -6,7 +6,7 @@ const horasPosibles = () => {
     let minuto = '00';
     let res = []
     for (let i = 0; i < 32; i++) {
-        if (minuto == '00') {
+        if (minuto === '00') {
             res.push([`${hora}:${minuto}`, i])
             minuto = '30'
         } else {
@@ -43,12 +43,12 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
         } else {
             alert('Porfi completa todos los campos q te cuesta animal')
         }
-        setAsignatura('');
+/*         setAsignatura('');
         setDesde('');
         setHasta('');
         setDia('');
         setColorCelda('');
-    }
+ */    }
 
     const limpiarHorario = () => {
         onLimpiarHorario()

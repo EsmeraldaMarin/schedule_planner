@@ -28,7 +28,12 @@
                     min-width: 60px;
                     max-width: 60px;
                 }
-                
+                &.ocupada{
+                    &:hover{
+                        background-color: red;
+                        cursor: pointer;
+                    }
+                }
             }
             
         }
