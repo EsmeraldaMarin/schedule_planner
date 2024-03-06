@@ -1,31 +1,37 @@
-.formulario{
+#root > div > div > div.formulario {
     width: 100%;
     margin-top: 20px;
     margin-right: 50px;
-    padding: 20px 40px ;
+    padding: 20px 40px;
     border-radius: 50px;
-    height: fit-content;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
-    > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-        margin-right: 10px !important;
+    > div.chrome-picker.colorInput {
+        > div:nth-child(1) {
+            width: 40% !important ;
+        }
+        > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+            margin-right: 10px !important;
+            > div {
+                height: 30px !important;
+                width: 30px !important;
+                border-radius: 50px !important;
+                margin-top: -3px !important;
+            }
+        }
     }
-    > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div{
-        height:30px !important;
-        width: 30px !important;
-        border-radius: 50px !important;
-        margin-top: -3px !important;
-    }
-    label{
+    label, span {
         font-size: 1.1em;
         margin: 5px 0;
     }
-    p{
+    p {
         margin-top: 10px;
     }
-    .inp_sel, .colorInput{
+    .inp_sel,
+    .colorInput {
         width: 100%;
         border-radius: 100px;
         margin: 5px 0;
@@ -33,17 +39,17 @@
         border: 0px;
         font-size: 1.2em;
         box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
-        &:focus{
+        &:focus {
             box-shadow: 0px 0px 5px 0px rgb(42, 42, 42);
         }
     }
-    
-    >div.horasCtn{
+
+    > div.horasCtn {
         display: flex;
         //flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        select{
+        select {
             margin: 0px 15px;
             text-align: center;
             padding: 7px 0;
@@ -51,39 +57,37 @@
             //max-width: 100px;
         }
     }
-    .colorInput{
+    .colorInput {
         display: flex;
         box-shadow: 0px 0px 3px 0px rgb(101, 100, 100) !important;
         border-radius: 30px !important;
         padding: 10px 40px !important;
-        
     }
-    .botonesCtn{
+    .botonesCtn {
         flex-direction: column;
-        button{
+        button {
             margin-top: 10px;
             color: white;
             font-size: 1em;
-            background-color: #0C356A;
-            &:hover{
+            background-color: #0c356a;
+            &:hover {
                 box-shadow: 0px 0px 8px 0px rgb(42, 42, 42);
             }
         }
-        >div{
+        > div {
             display: flex;
             width: 100%;
-            button{
-                &:first-child{
+            button {
+                &:first-child {
                     width: 40%;
                     margin-right: 10px;
-                    background-color:#DF2E38;
+                    background-color: #df2e38;
                 }
-                &:nth-child(2){
+                &:nth-child(2) {
                     width: 60%;
                     background-color: #03cc6e;
                 }
             }
         }
-        
     }
 }

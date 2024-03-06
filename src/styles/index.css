@@ -47,35 +47,39 @@
   cursor: pointer;
 }
 
-.formulario {
+#root > div > div > div.formulario {
   width: 100%;
   margin-top: 20px;
   margin-right: 50px;
   padding: 20px 40px;
   border-radius: 50px;
-  height: fit-content;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
 }
-.formulario > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+#root > div > div > div.formulario > div.chrome-picker.colorInput > div:nth-child(1) {
+  width: 40% !important;
+}
+#root > div > div > div.formulario > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
   margin-right: 10px !important;
 }
-.formulario > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div {
+#root > div > div > div.formulario > div.chrome-picker.colorInput > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div {
   height: 30px !important;
   width: 30px !important;
   border-radius: 50px !important;
   margin-top: -3px !important;
 }
-.formulario label {
+#root > div > div > div.formulario label, #root > div > div > div.formulario span {
   font-size: 1.1em;
   margin: 5px 0;
 }
-.formulario p {
+#root > div > div > div.formulario p {
   margin-top: 10px;
 }
-.formulario .inp_sel, .formulario .colorInput {
+#root > div > div > div.formulario .inp_sel,
+#root > div > div > div.formulario .colorInput {
   width: 100%;
   border-radius: 100px;
   margin: 5px 0;
@@ -84,48 +88,49 @@
   font-size: 1.2em;
   box-shadow: 0px 0px 3px 0px rgb(101, 100, 100);
 }
-.formulario .inp_sel:focus, .formulario .colorInput:focus {
+#root > div > div > div.formulario .inp_sel:focus,
+#root > div > div > div.formulario .colorInput:focus {
   box-shadow: 0px 0px 5px 0px rgb(42, 42, 42);
 }
-.formulario > div.horasCtn {
+#root > div > div > div.formulario > div.horasCtn {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.formulario > div.horasCtn select {
+#root > div > div > div.formulario > div.horasCtn select {
   margin: 0px 15px;
   text-align: center;
   padding: 7px 0;
   min-width: 100px;
 }
-.formulario .colorInput {
+#root > div > div > div.formulario .colorInput {
   display: flex;
   box-shadow: 0px 0px 3px 0px rgb(101, 100, 100) !important;
   border-radius: 30px !important;
   padding: 10px 40px !important;
 }
-.formulario .botonesCtn {
+#root > div > div > div.formulario .botonesCtn {
   flex-direction: column;
 }
-.formulario .botonesCtn button {
+#root > div > div > div.formulario .botonesCtn button {
   margin-top: 10px;
   color: white;
   font-size: 1em;
-  background-color: #0C356A;
+  background-color: #0c356a;
 }
-.formulario .botonesCtn button:hover {
+#root > div > div > div.formulario .botonesCtn button:hover {
   box-shadow: 0px 0px 8px 0px rgb(42, 42, 42);
 }
-.formulario .botonesCtn > div {
+#root > div > div > div.formulario .botonesCtn > div {
   display: flex;
   width: 100%;
 }
-.formulario .botonesCtn > div button:first-child {
+#root > div > div > div.formulario .botonesCtn > div button:first-child {
   width: 40%;
   margin-right: 10px;
-  background-color: #DF2E38;
+  background-color: #df2e38;
 }
-.formulario .botonesCtn > div button:nth-child(2) {
+#root > div > div > div.formulario .botonesCtn > div button:nth-child(2) {
   width: 60%;
   background-color: #03cc6e;
 }/*# sourceMappingURL=index.css.map */

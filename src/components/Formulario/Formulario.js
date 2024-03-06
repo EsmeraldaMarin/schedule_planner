@@ -59,16 +59,19 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
     }
     return (
         <div className='formulario'>
-            <label>Ingrese la Asignatura</label>
+            <label htmlFor='asignaturaInput'>Ingrese la Asignatura</label>
             <input
                 type='text'
+                id='asignaturaInput'
                 placeholder='Ej: Economia'
                 className='inp_sel'
                 value={asignatura}
                 onChange={(event) => setAsignatura(event.target.value)}
             />
-            <label>Ingrese el dia</label>
+            <label htmlFor= 'diaInput'>Ingrese el dia</label>
             <select
+                id='diaInput'
+                title='Selecciona el dia'
                 className='inp_sel'
                 value={dia}
                 onChange={(event) => setDia(event.target.value)}>
@@ -77,10 +80,12 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                     <option key={index} value={dias[1]}>{dias[0]}</option>
                 ))}
             </select>
-            <label>Ingrese el Horario</label>
+            <label htmlFor='desdeInput'>Ingrese el Horario</label>
             <div className='horasCtn'>
                 de:
                 <select
+                    id='desdeInput'
+                    title='Selecciona desde que hora'
                     className='inp_sel'
                     value={desde}
                     onChange={(event) => setDesde(event.target.value)}>
@@ -91,6 +96,8 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                 </select>
                 a:
                 <select
+                    id='hastaInput'
+                    title='Selecciona hasta que hora'
                     className='inp_sel'
                     value={hasta}
                     onChange={(event) => setHasta(event.target.value)}>
@@ -100,8 +107,8 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                     ))}
                 </select>
             </div>
-            <label htmlFor="colorPicker">Selecciona un color:</label>
-            <ChromePicker className='colorInput' color={colorCelda} onChangeComplete={handleColorChange} />
+            <span htmlFor="colorPicker">Selecciona un color:</span>
+            <ChromePicker  className='colorInput' color={colorCelda} onChangeComplete={handleColorChange}  />
 
             <div className='botonesCtn'>
                 <div>
@@ -111,7 +118,6 @@ const Formulario = ({ onAgregarHorario, onLimpiarHorario, onGenerarImagen }) => 
                 <button onClick={descargarHorario} className='inp_sel'>Descargar Horario</button>
 
             </div>
-
         </div>
     )
 }
